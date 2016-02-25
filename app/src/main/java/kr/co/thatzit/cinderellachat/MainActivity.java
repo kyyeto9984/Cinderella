@@ -1,4 +1,4 @@
-package kr.co.thatzit.cinderella;
+package kr.co.thatzit.cinderellachat;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -10,6 +10,8 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
@@ -26,7 +28,7 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 public class MainActivity extends AppCompatActivity {
 
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-    private final int MY_PERMISSION_REQUEST_STORAGE = 100;
+    private final int MY_PERMISSION_REQUEST_STORAGE = 1000;
     private static final String TAG = "MainActivity";
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private WebView webView;
@@ -45,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {   // runtime permission check
+                Log.i("asdasd","Runtime Permission");
                 requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.INTERNET,
                         Manifest.permission.WAKE_LOCK,
                         "com.google.android.c2dm.permission.RECEIVE"}
                         , MY_PERMISSION_REQUEST_STORAGE);
+                Log.i("asdasd","requestPermission");
             }
         }
         webView = (WebView) findViewById(R.id.webview);

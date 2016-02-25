@@ -1,4 +1,4 @@
-package kr.co.thatzit.cinderella;
+package kr.co.thatzit.cinderellachat;
 
 import android.annotation.SuppressLint;
 import android.app.IntentService;

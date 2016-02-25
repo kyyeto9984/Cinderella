@@ -1,4 +1,4 @@
-package kr.co.thatzit.cinderella;
+package kr.co.thatzit.cinderellachat;
 
 /**
  * Created by LSJ on 2015-12-14.

@@ -1,4 +1,4 @@
-package kr.co.thatzit.cinderella;
+package kr.co.thatzit.cinderellachat;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
